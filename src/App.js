@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import Navbar from "./components/Navbar";
+import BookList from "./components/BookList";
+import ThemeContextProvider from "./contexts/ThemeContext";
 
 function App() {
-  const [fruit, setFruit] = useState("apple");
-
-  const handleChange = e => {
-    setFruit("orange");
-  };
-
   return (
-    <div>
-      {fruit}
-      <button onClick={() => handleChange()}>Change Fruit</button>
+    <div className="App">
+      <ThemeContextProvider>
+        <Navbar />
+        <BookList />
+      </ThemeContextProvider>
     </div>
   );
 }
